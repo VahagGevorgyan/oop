@@ -1,10 +1,11 @@
 "use strict";
-let id = 0;
 class Account {
+  static id = 0;
   constructor(name, balance) {
-    this._id = id++;
+    this._id = Account.id;
     this._name = name;
     this._balance = balance;
+    Account.id++;
   }
   get id() {
     return this._id;
@@ -16,6 +17,7 @@ class Account {
   get balance() {
     return this._balance;
   }
+  
   set name(value) {
     this._name = value;
   }
